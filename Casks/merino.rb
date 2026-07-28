@@ -29,6 +29,8 @@ cask "merino" do
   zap trash: [
     "~/Library/Logs/merino",
     "~/Library/Caches/merino",
+    "~/Library/Preferences/dev.apinant.merino.plist",
+    "~/Library/Saved Application State/dev.apinant.merino.savedState",
   ]
 
   caveats <<~EOS
@@ -37,5 +39,10 @@ cask "merino" do
     If macOS still blocks first launch:
       System Settings → Privacy & Security → Open Anyway
     Or right-click Merino.app → Open.
+
+    Full uninstall (app + state):
+      brew uninstall --cask --zap merino
+    Or:
+      curl -fsSL https://raw.githubusercontent.com/LoneExile/merino/main/scripts/uninstall.sh | bash
   EOS
 end
