@@ -12,7 +12,7 @@ cask "merino" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
   depends_on arch: :arm64
 
   app "merino.app"

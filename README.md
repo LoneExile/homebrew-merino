@@ -15,3 +15,12 @@ brew install --cask merino
 brew update
 brew upgrade --cask merino
 ```
+
+## Trust (Homebrew third-party taps)
+
+Newer Homebrew may require:
+
+```bash
+brew trust LoneExile/merino
+brew install --cask merino
+```
