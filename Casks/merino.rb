@@ -15,7 +15,7 @@ cask "merino" do
   depends_on macos: ">= :monterey"
   depends_on arch: :arm64
 
-  app "Merino.app"
+  app "merino.app"
 
   zap trash: [
     "~/Library/Logs/merino",
