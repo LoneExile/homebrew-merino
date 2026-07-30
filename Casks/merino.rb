@@ -18,8 +18,9 @@ cask "merino" do
   # Zip ships merino.app (APFS case-insensitive packaging); install as Merino.app.
   app "merino.app", target: "Merino.app"
 
-  # Ad-hoc signed only — strip download quarantine so Gatekeeper does not block launch.
-  # Users should still prefer: brew install --cask --no-quarantine merino
+  # Ad-hoc signed only — strip download quarantine so Gatekeeper does not block
+  # launch. This is why no --no-quarantine flag is needed (and Homebrew 6
+  # rejects that flag outright).
   postflight do
     app_path = "#{appdir}/Merino.app"
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", app_path], must_succeed: false
@@ -35,7 +36,7 @@ cask "merino" do
 
   caveats <<~EOS
     Merino is ad-hoc signed (not Apple notarized yet).
-    Prefer:  brew install --cask --no-quarantine merino
+    Quarantine is stripped for you on install; no extra flags needed.
     If macOS still blocks first launch:
       System Settings → Privacy & Security → Open Anyway
     Or right-click Merino.app → Open.
