@@ -1,6 +1,6 @@
 cask "merino" do
-  version "0.4.0"
-  sha256 "c1fd7b18fc9722bf9bceb143dd2b74751a2bdfc65287c98e1114e3bd122f4f5a"
+  version "0.4.1"
+  sha256 "601a68f6993fb7b5717f25b9842d9b8f60248febe698348d1aecb51179e64454"
 
   url "https://github.com/LoneExile/merino/releases/download/v#{version}/Merino-#{version}-macos-arm64.zip"
   name "Merino"
